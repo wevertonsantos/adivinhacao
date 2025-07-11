@@ -2,18 +2,15 @@ import random
 
 def main():
     numero_secreto = gerar_numero_secreto()
-    numero_usuario = recebe_numero_usuario()
     tentativas = 0
-    while tentativas < 4:
+    while tentativas < 5:
+        numero_usuario = recebe_numero_usuario()
         if verificar_adivinhacao(numero_secreto,numero_usuario):
             print("Você acertou o número secreto")
             break
-        else:
-            numero_usuario = recebe_numero_usuario()
         tentativas += 1
-        if tentativas == 4:
-            print("Esgotou as tentativas!")
-            
+        if tentativas == 5:
+            print(f"Esgotou as tentativas! O número secreto era: {numero_secreto}")
 
 def gerar_numero_secreto():
     numero_secreto = random.randint(1,50)
