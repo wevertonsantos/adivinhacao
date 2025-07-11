@@ -10,9 +10,9 @@ def main():
             break
         else:
             numero_usuario = recebe_numero_usuario()
-        if tentativas == 3:
-            print("Esgotou as tentativas!")
         tentativas += 1
+        if tentativas == 4:
+            print("Esgotou as tentativas!")
             
 
 def gerar_numero_secreto():
@@ -32,7 +32,7 @@ def verificar_adivinhacao(numero_secreto,numero_usuario):
         print("O número foi mais alto que o número secreto")
         return False
     elif numero_usuario < numero_secreto:
-        print("O número foi a baixo do número secreto")
+        print("O número foi abaixo do número secreto")
         return False
     elif numero_usuario == numero_secreto:
         return True
