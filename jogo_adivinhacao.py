@@ -14,6 +14,8 @@ def main():
             break
         else:
             numero_usuario = recebe_numero_usuario()
+        if tentativas == 3:
+            print("Esgotou as tentativas!")
         tentativas += 1
             
 
@@ -37,8 +39,5 @@ def verificar_adivinhacao(numero_secreto,numero_usuario):
         return False
     elif numero_usuario == numero_secreto:
         return True
-
-def tentativas():
-    ...
 
 main()
