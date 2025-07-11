@@ -20,11 +20,12 @@ def gerar_numero_secreto():
     return numero_secreto
 
 def recebe_numero_usuario():
-    try:
-        numero_usuario = int(input("Adivinhe o número 0 a 50: "))
-        return numero_usuario
-    except ValueError:
-        print("Você digitou algo errado.")
+    while True:
+        try:
+            numero_usuario = int(input("Adivinhe o número 0 a 50: "))
+            return numero_usuario
+        except ValueError:
+            print("Você digitou algo errado.")
 
 def verificar_adivinhacao(numero_secreto,numero_usuario):
     if numero_usuario > numero_secreto:
